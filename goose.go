@@ -42,10 +42,20 @@ type identCtx struct {
 
 type visitor int
 
+func (ctx Ctx) structToInterface(n ast.Node) (ok bool) {
+	ok = // uses interface
+	return
+}
+
 func (v visitor) Visit(n ast.Node) ast.Visitor {
+	// store structs, struct func impl, and interfaces
 	// check if this functions uses the struct to interface transform
-	// do a struct to interface transform
-	// make sure this prints in coq
+	ok := ctx.structToInterface(n)
+	if ok {
+		// do a struct to interface transform, print
+		return coq.structToInterface{Struct: , Interface: , Methods: }
+	}
+	return v
 }
 
 func newIdentCtx() identCtx {
